@@ -1,0 +1,22 @@
+<app-currency-header [currencyId]="currencyId"></app-currency-header>
+
+<div *ngIf="!isLoading" [@inOutAnimation]>
+    <mat-list>
+        <mat-list-item *ngFor="let currency of currencies ; let i = index">
+            <mat-divider></mat-divider>
+            <div class="d-flex justify-content-around w-100">
+                <div class="lightblue">
+                    {{currency.Fecha}}
+                </div>                
+                <div *ngIf="currencyId != 3">
+                    $ {{currency.Valor}}
+                </div>
+                <div *ngIf="currencyId == 3">
+                    {{currency.Valor}} %
+                </div>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>

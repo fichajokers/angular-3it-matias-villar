@@ -1,0 +1,63 @@
+<app-currency-header [currencyId]="currencyId"></app-currency-header>
+
+<div *ngIf="!isLoading" [@inOutAnimation]>
+    <h1 class="text-center" *ngIf="!isLoading">{{currencyName}}</h1>
+
+    <h2 class="text-center lightblue">
+        <strong *ngIf="currencies && currencyId != 3">$ {{currencies[currencies.length-1].Valor}}</strong>
+        <strong *ngIf="currencies && currencyId == 3">{{currencies[currencies.length-1].Valor}} %</strong>
+    </h2>
+    
+    <div class="currencyDetail">
+        <mat-list>
+            <mat-list-item>
+                <div class="d-flex justify-content-between w-100">
+                    <div>
+                        Nombre
+                    </div>                
+                    <div>
+                        {{currencyName}}
+                    </div>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div class="d-flex justify-content-between w-100">
+                    <div>
+                        Fecha
+                    </div>                
+                    <div *ngIf="currencies">
+                        {{currencies[currencies.length-1].Fecha | date : 'dd/MM/yyyy'}}
+                    </div>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div class="d-flex justify-content-between w-100">
+                    <div>
+                        Unidad de Medida
+                    </div>                
+                    <div>
+                        {{unidadMedida}}
+                    </div>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    
+    <div class="currencyDetail">
+        <ngx-charts-line-chart
+            [view]="view"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxis]="xAxis"
+            [yAxis]="yAxis"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [timeline]="timeline"
+            [results]="multi"
+            [autoScale]="true"
+        >
+        </ngx-charts-line-chart>
+    </div>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>

@@ -1,0 +1,80 @@
+<p>
+    <mat-toolbar class="text-center">
+        <span class="w-100">Indicadores</span>
+    </mat-toolbar>
+</p>
+
+<div [@inOutAnimation]>
+    <mat-list>
+        <mat-list-item matRipple>
+            <div class="d-flex justify-content-between cursor-pointer w-100">
+                <div class="w-100" (click)="goToHistorical(1)">
+                    Dólar
+                    <br>
+                    <small class="lightblue">pesos</small>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <mat-icon class="lightblue" (click)="goToDetail(1)">info_outline</mat-icon>
+                    <mat-icon class="" (click)="goToHistorical(1)">keyboard_arrow_right</mat-icon>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item matRipple>
+            <div class="d-flex justify-content-between cursor-pointer w-100">
+                <div class="w-100" (click)="goToHistorical(2)">
+                    Euro
+                    <br>
+                    <small class="lightblue">pesos</small>
+                </div>
+                <div class="d-flex align-items-center">
+                    <mat-icon class="lightblue" (click)="goToDetail(2)">info_outline</mat-icon>
+                    <mat-icon class="" (click)="goToHistorical(2)">keyboard_arrow_right</mat-icon>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item matRipple>
+            <div class="d-flex justify-content-between cursor-pointer w-100">
+                <div class="w-100" (click)="goToHistorical(3)">
+                    IPC
+                    <br>
+                    <small class="lightblue">porcentaje</small>
+                </div>
+                <div class="d-flex align-items-center">
+                    <mat-icon class="lightblue" (click)="goToDetail(3)">info_outline</mat-icon>
+                    <mat-icon class="" (click)="goToHistorical(3)">keyboard_arrow_right</mat-icon>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item matRipple>
+            <div class="d-flex justify-content-between cursor-pointer w-100">
+                <div class="w-100" (click)="goToHistorical(4)">
+                    UF
+                    <br>
+                    <small class="lightblue">pesos</small>
+                </div>
+                <div class="d-flex align-items-center">
+                    <mat-icon class="lightblue" (click)="goToDetail(4)">info_outline</mat-icon>
+                    <mat-icon class="" (click)="goToHistorical(4)">keyboard_arrow_right</mat-icon>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item matRipple>
+            <div class="d-flex justify-content-between cursor-pointer w-100">
+                <div class="w-100" (click)="goToHistorical(5)">
+                    UTM
+                    <br>
+                    <small class="lightblue">pesos</small>
+                </div>
+                <div class="d-flex align-items-center">
+                    <mat-icon class="lightblue" (click)="goToDetail(5)">info_outline</mat-icon>
+                    <mat-icon class="" (click)="goToHistorical(5)">keyboard_arrow_right</mat-icon>
+                </div>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</div>
